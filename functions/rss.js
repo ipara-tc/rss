@@ -99,7 +99,7 @@ function buildRssItems(items) {
     .map((item) => {
       //const hasTitle = item.excerpt;
       const hasTitle = item.title;
-      const updatedTitle = hasTitle.replace("&amp;","&");
+      const updatedTitle = hasTitle.replace("&","&");
 
       const hasLink = item.slug;
       const hasDescription = item.metaDescription;

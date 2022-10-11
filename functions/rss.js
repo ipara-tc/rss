@@ -97,26 +97,18 @@ function buildRssItems(items) {
 
   return items
     .map((item) => {
-      const hasTitle = item.excerpt;
+      //const hasTitle = item.excerpt;
+      const hasTitle = item.title;
+      const updatedTitle = hasTitle.replace("&", " dndnd ");
+
       const hasLink = item.slug;
       const hasDescription = item.metaDescription;
       const hasAuthor = item.author.name;
 
-      const title = hasTitle ? `${item.excerpt}` : "New Post"   
+      const title = hasTitle ? updatedTitle : "New Post"   
       const link = hasLink ? ` https://bluecape.com/blog/${item.slug}` : "";
       const description = hasDescription ? `${item.metaDescription} - ${link}` : "";
       const author = hasAuthor ? `${item.author.name}` : "Bluescape Team"
-
-
-      //const hasAuthor = item.author.name;
-      
-      //const titleMaybeTruncated = hasTitle && item.excerpt.length > truncateLength ? "..." : "";
-      
-      /*
-      const title = hasTitle
-        ? `${item.title.slice(0, truncateLength)}${titleMaybeTruncated}`
-        : "New post";
-      */
 
       return `
         <item>

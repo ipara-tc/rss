@@ -21,11 +21,13 @@ export default function Home() {
        
         </p>
 
-        <Link href="/.netlify/functions/rss">
+        
           <div className={styles.card}>
-            <a>View RSS</a>
+            <Link href="/.netlify/functions/rss">
+              <a>View RSS</a>
+            </Link>
           </div>
-        </Link>
+
       </main>
     </div>
   )
